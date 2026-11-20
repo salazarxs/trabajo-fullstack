@@ -1,0 +1,16 @@
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: tienda-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: tienda
+      MYSQL_USER: tienda
+      MYSQL_PASSWORD: tienda123
+    ports:
+      - "3307:3306"
+    volumes:
+      - tienda-data:/var/lib/mysql
+
+volumes:
+  tienda-data:
